@@ -3,20 +3,22 @@ import { StyleSheet, View, Pressable, Text, Dimensions } from 'react-native';
 type Props = {
     label: string;
     theme?: 'secondary';
+    onPress?: () => void;
+    
 }
 
 
-export default function Button( {label, theme}: Props ){
+export default function Button( {label, theme, onPress}: Props ){
     if (theme == 'secondary'){
         return (
-            <Pressable style={[ styles.container, { backgroundColor: "#A6E1FA", borderColor: "white" } ]}>
+            <Pressable style={[ styles.container, { backgroundColor: "#A6E1FA", borderColor: "white" }]} onPress={ onPress }>
                 <Text style={ styles.label }>{ label }</Text>
             </Pressable>
         )
     }
 
     return(
-        <Pressable style={[ styles.container, { backgroundColor: "white" } ]}>
+        <Pressable style={[ styles.container, { backgroundColor: "white" } ]} onPress={ onPress }>
             <Text style={ styles.label }>{ label }</Text>
         </Pressable>
     )

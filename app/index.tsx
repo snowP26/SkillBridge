@@ -1,8 +1,24 @@
-import { Text, View, StyleSheet, Dimensions } from "react-native";
+/* 
+Authored by: James Gabriel Verceluz
+Company: Ninjas In Paris
+Project: SkillBridge
+Feature: [SB-001] Landing Screen
+Description: A screen where the user could choose to Login or Register their accounts.a
+ */
+
+import { Text, View, StyleSheet, Dimensions, Alert } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Image } from "expo-image";
 
 import Button from "@/components/Buttons";
+
+const loginButton = () => {
+  Alert.alert("You clicked the Login button.")
+}
+
+const signUpButton = () => {
+  Alert.alert("You clicked the Sign Up button.")
+}
 
 
 const bridgeLogo = require("../assets/images/sbBridgeW.png")
@@ -21,13 +37,13 @@ export default function Index() {
       <Text style={ styles.spiel2 }>Continue to do what you love.</Text>
 
       <View style={ styles.bwrap }> 
-        <Button label={ "Log In" } />
+        <Button label={ "Log In" } onPress={ loginButton } />
         <View style={styles.dividerContainer}>
           <View style={styles.line} />
             <Text style={styles.divider}>OR</Text>
           <View style={styles.line} />
         </View>
-        <Button label={ "Sign Up" } theme="secondary"/>
+        <Button label={ "Sign Up" } theme="secondary" onPress={ signUpButton } />
       </View>
       
     </LinearGradient>
