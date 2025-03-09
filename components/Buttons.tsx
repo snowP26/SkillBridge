@@ -18,7 +18,7 @@ export default function Button( {label, theme, onPress}: Props ){
     }
 
     return(
-        <Pressable style={[ styles.container, { backgroundColor: "white" } ]} onPress={ onPress }>
+        <Pressable style={[ styles.container, { backgroundColor: "#F0EBD8" } ]} onPress={ onPress }>
             <Text style={ styles.label }>{ label }</Text>
         </Pressable>
     )

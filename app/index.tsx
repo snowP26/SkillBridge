@@ -5,28 +5,33 @@ Project: SkillBridge
 Feature: [SB-001] Landing Screen
 Description: A screen where the user could choose to Login or Register their accounts.a
  */
-
 import { Text, View, StyleSheet, Dimensions, Alert } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Image } from "expo-image";
+import { Link, useRouter } from "expo-router";
+
 
 import Button from "@/components/Buttons";
 
+
+export default function Index() {
+  
+const router = useRouter();
+
 const loginButton = () => {
-  Alert.alert("You clicked the Login button.")
+  router.push("/login");
 }
 
 const signUpButton = () => {
-  Alert.alert("You clicked the Sign Up button.")
-}
+  router.push("/register");
+};
 
 
 const bridgeLogo = require("../assets/images/sbBridgeW.png")
 
-export default function Index() {
   return (
     <LinearGradient
-      colors={ ["#00072D", "#0A2472"] } 
+      colors={ ["#00072D", "#0A2472", "#0A2472", "#0A2472"] } 
       style={ styles.background }
     >
       <Text style={ styles.header }>SkillBridge</Text>
@@ -37,13 +42,15 @@ export default function Index() {
       <Text style={ styles.spiel2 }>Continue to do what you love.</Text>
 
       <View style={ styles.bwrap }> 
-        <Button label={ "Log In" } onPress={ loginButton } />
-        <View style={styles.dividerContainer}>
-          <View style={styles.line} />
-            <Text style={styles.divider}>OR</Text>
-          <View style={styles.line} />
+        
+          <Button label={ "Log In" } onPress={ loginButton } />
+        
+        <View style={ styles.dividerContainer }>
+          <View style={ styles.line } />
+            <Text style={ styles.divider }>OR</Text>
+          <View style={ styles.line } />
         </View>
-        <Button label={ "Sign Up" } theme="secondary" onPress={ signUpButton } />
+            <Button label={ "Register" } theme="secondary" onPress={ signUpButton }/>
       </View>
       
     </LinearGradient>
@@ -118,6 +125,7 @@ const styles = StyleSheet.create({
     
   },
 })
+
 
 
 /* 
