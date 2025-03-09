@@ -1,4 +1,4 @@
-import { StyleSheet, View, Pressable, Text, Dimensions } from 'react-native';
+import { StyleSheet, View, Pressable, Text, Dimensions, SafeAreaView } from 'react-native';
 import { MoveLeft } from "lucide-react-native";
 import { useRouter } from "expo-router";
 
@@ -15,19 +15,19 @@ export default function Onboarding( {mainHeader, subHeader}: Props ){
 
     return(
         <View style={ styles.headerContainer }>
-            <View style={ styles.backButton }>
+            <SafeAreaView style={ styles.backButton }>
                 <MoveLeft size={40} color={"black"} onPress={ backButton }/>
-            </View>
-            <View style={ styles.headerText }>
+            </SafeAreaView>
+            <SafeAreaView style={ styles.headerText }>
                 <Text style={ styles.mainHeader }>{ mainHeader }</Text>
                 <Text style={ styles.subHeader }>{ subHeader }</Text>                    
-            </View>
+            </SafeAreaView>
         </View>
     );
 }
 const styles = StyleSheet.create({
     backButton: {
-        marginLeft: Dimensions.get("window").width/15,
+        marginLeft: 30,
         marginTop: 60,
     },
     headerContainer: {

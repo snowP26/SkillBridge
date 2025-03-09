@@ -1,5 +1,4 @@
 import { Stack } from "expo-router";
-import { StyleSheet } from "react-native";
 
 
 export default function RootLayout() {
@@ -20,6 +19,12 @@ export default function RootLayout() {
     />
     <Stack.Screen 
       name="login"
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen 
+      name="forgotpassword"
       options={{
         headerShown: false,
       }}
