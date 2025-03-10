@@ -12,6 +12,13 @@ export default function TabsLayout() {
                     tabBarIcon: () => <House />
                 }}
             />
+            <Tabs.Screen
+                name="category2"
+                options={{
+                    tabBarLabel: "Home",
+                    tabBarIcon: () => <House />
+                }}
+                />
         </Tabs>
     )
 } 

@@ -21,6 +21,10 @@ export default function Login() {
         router.back();
     }
 
+    const loginButton = () => {
+        router.push("/(tabs)");
+    }
+
     return (
         <LinearGradient
             colors={ ["#00072D", "#0A2472", "#0A2472", "#0A2472"] } 
@@ -63,7 +67,7 @@ export default function Login() {
             </SafeAreaView>
             
             <SafeAreaView style={ styles.button }>
-                <Button label="Log In"/>
+                <Button onPress={loginButton} label="Log In"/>
             </SafeAreaView>
             <SafeAreaView style={styles.fpContainer}>
                 <Link href="/forgotpassword" style={styles.fPassword}>Forgot Password?</Link>
