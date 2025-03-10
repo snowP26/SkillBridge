@@ -1,4 +1,4 @@
-import { SafeAreaView, Text } from "react-native";
+import { SafeAreaView, Text, StyleSheet, Dimensions } from "react-native";
 import { MoveLeft } from "lucide-react-native";
 import { useRouter } from "expo-router";
 

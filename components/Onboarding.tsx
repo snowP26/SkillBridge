@@ -17,6 +17,7 @@ export default function Onboarding( {mainHeader, subHeader}: Props ){
         <View style={ styles.headerContainer }>
             <SafeAreaView style={ styles.backButton }>
                 <MoveLeft size={40} color={"black"} onPress={ backButton }/>
+
             </SafeAreaView>
             <SafeAreaView style={ styles.headerText }>
                 <Text style={ styles.mainHeader }>{ mainHeader }</Text>
@@ -39,6 +40,7 @@ const styles = StyleSheet.create({
     headerText: {
         marginTop: 10,
         marginLeft: 50,
+
     },
     mainHeader: {
         fontWeight: "800",

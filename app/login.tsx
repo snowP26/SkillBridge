@@ -8,7 +8,7 @@ Description: A screen where the user can Log In into their account
 import { Text, View, StyleSheet, Dimensions, Alert, SafeAreaView, TextInput } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter, Link } from "expo-router";
-import { EyeClosed } from "lucide-react-native";
+import { EyeClosed, MapPin } from "lucide-react-native";
 import Onboarding from "@/components/Onboarding";
 import Button from "@/components/Buttons";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
@@ -72,6 +72,7 @@ export default function Login() {
             <SafeAreaView style={styles.fpContainer}>
                 <Link href="/forgotpassword" style={styles.fPassword}>Forgot Password?</Link>
             </SafeAreaView>
+            
             
             
 
