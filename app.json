@@ -15,7 +15,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.anonymous.SkillBridge"
     },
     "web": {
       "bundler": "metro",
@@ -37,6 +38,5 @@
     "experiments": {
       "typedRoutes": true
     }
-    
   }
 }

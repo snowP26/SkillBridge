@@ -6,10 +6,11 @@ Feature: [SS012] - Listing Screen
 Description: A screen for the full details of a listing
  */
 
-import { useNavigation } from "@react-navigation/native";
-import { View, Text, Image, TouchableOpacity, FlatList, StyleSheet, Dimensions, ScrollView } from "react-native";
-import { MapPin, CalendarClock, CircleUserRound, ArrowLeft, Heart } from "lucide-react-native";
+
+import { View, Text, TouchableOpacity, FlatList, StyleSheet, Dimensions} from "react-native";
+import { MapPin, CalendarClock, CircleUserRound, Heart } from "lucide-react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import Banner from "@/components/Banner";
 import '../globals.css';
 
 
@@ -24,67 +25,52 @@ const jobData = {
   mods: ["Polyfill mod", "Painter’s tape mod", "Switch lubing", "Stab replacement"],
 };
 
+const banner = require("../../assets/images/keyboard.png");
+
 export default function Category2() {
-  const navigation = useNavigation();
+
 
   return (
     <LinearGradient
-      colors={["#00072D", "#0A2472", "#0A2472", "#0A2472"]}
-      className="flex-1 h-full w-full"
-    >
-      <View className="flex-1 ">
-        <View>
-          <View className="w-full h-[120px] object-cover">
-            <Image
-              source={{
-                uri: "https://i.pinimg.com/736x/ff/d1/af/ffd1af7d8daeaef15ad9fcb9c1dbd8aa.jpg",
-              }}
-              className="w-full h-[120px] object-cover"
-            />
-          </View>
-          
-          <TouchableOpacity className="absolute top-15 left-15 p-[5px]"
-            onPress={() => navigation.goBack()}
-          >
-            <ArrowLeft size={30} color="white" />
-          </TouchableOpacity>
-        </View>
-        
-
-        <View className="p-[15px]">
-          <View className="flex-row justify-between items-center">
-            <Text className="text-[22px] font-bold color-white flex-1">{jobData.title}</Text>
+    colors={["#00072D", "#0A2472", "#0A2472", "#0A2472"]}
+    style={styles.background}
+  >
+    <View style={styles.container}>
+        <Banner link={require("../../assets/images/keyboard.png")}/>
+        <View style={styles.headerContent}>
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>{jobData.title}</Text>
             <Heart size={24} color={"white"} />
           </View>
-          <View className="flex-row items-center mt-[5px]">
+          <View style={styles.userInfo}>
             <CircleUserRound size={75} color={"white"} />
-            <View className="ml-[10px]">
-              <View className="flex-row items-center mt-[3px]">
+            <View style={styles.userText}>
+              <View style={styles.locationContainer}>
                 <MapPin color={"white"} />
-                <Text className="text-[#A9C7FF] text-[12px] ml-10">{jobData.location}</Text>
+                <Text style={styles.location}>{jobData.location}</Text>
               </View>
-              <View className="flex-row items-center mt-[3px]">
+              <View style={styles.dateContainer}>
                 <CalendarClock color={"white"} />
-                <Text className="text-[#A9C7FF] text-[12px] ml-10">{jobData.finishDate}</Text>
-                <Text className="text-[#A9C7FF] text-[12px] ml-10">{jobData.postedDate}</Text>
+                <Text style={styles.date}>{jobData.finishDate}</Text>
+                <Text style={styles.date}>{jobData.postedDate}</Text>
               </View>
             </View>
           </View>
         </View>
 
-        <View className="flex-row items-center justify-between p-[15px]">
-          <TouchableOpacity className="px-[15px] py-[10px] border-[1px] border-white rounded-[5px]">
-            <Text className="text-[18px] font-bold text-white">{jobData.price}</Text>
+        <View style={styles.priceContainer}>
+          <TouchableOpacity style={styles.priceButton}>
+            <Text style={styles.priceText}>{jobData.price}</Text>
           </TouchableOpacity>
-          <TouchableOpacity className="bg-white px-[15px] py-[10px] rounded-[5px]">
-            <Text className="font-bold color-sb3">Message</Text>
+          <TouchableOpacity style={styles.messageButton}>
+            <Text style={styles.messageText}>Message</Text>
           </TouchableOpacity>
         </View>
 
         <FlatList
-          ListHeaderComponent={<Text className="text-[14px] color-white">{jobData.description}</Text>}
+          ListHeaderComponent={<Text style={styles.description}>{jobData.description}</Text>}
           data={jobData.mods}
-          renderItem={({ item }) => <Text className="text-[14px] color-white mt-[5px]">• {item}</Text>}
+          renderItem={({ item }) => <Text style={styles.listItem}>• {item}</Text>}
           keyExtractor={(item, index) => index.toString()}
           contentContainerStyle={styles.flatListContainer}
         />
@@ -95,6 +81,92 @@ export default function Category2() {
 }
 
 const styles = StyleSheet.create({
+
+  container: { 
+    flex: 1 
+  },
+
+
+
+  background: {
+    flex: 1,
+    width: Dimensions.get("window").width,
+    height: Dimensions.get("window").height,
+  },
+
+  title: { 
+    fontSize: 22, 
+    fontWeight: "bold", 
+    color: "white", 
+    flex: 1 
+  },
+
+
+  userInfo: { 
+    flexDirection: "row", 
+    alignItems: "center", 
+    marginTop: 5 
+  },
+
+  userText: { 
+    marginLeft: 10 
+  },
+
+  locationContainer: { 
+    flexDirection: "row", 
+    alignItems: "center" 
+  },
+
+  dateContainer: { 
+    flexDirection: "row", 
+    alignItems: "center", 
+    marginTop: 3 
+  },
+
+  location: { 
+    color: "#A9C7FF", 
+    marginLeft: 10 
+  },
+  
+  date: { 
+    color: "#A9C7FF", 
+    fontSize: 12, 
+    marginLeft: 10 
+  },
+
+  priceContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: 15,
+  },
+
+  priceButton: {
+    borderWidth: 1,
+    borderColor: "white",
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    borderRadius: 5,
+  },
+
+  priceText: { 
+    fontSize: 18, 
+    fontWeight: "bold", 
+    color: "white" 
+  },
+
+  messageButton: { 
+    backgroundColor: "white", 
+    paddingVertical: 10, 
+    paddingHorizontal: 15, 
+    borderRadius: 5 
+  },
+
+  messageText: { 
+    fontWeight: "bold", 
+    color: "#0A2A5C" 
+  },
+
   flatListContainer: {
     backgroundColor: "#081E42",
     padding: 15,
@@ -106,4 +178,28 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     elevation: 5,
   },
+
+  description: { 
+    fontSize: 14, 
+    color: "white" 
+  },
+
+  listItem: { 
+    fontSize: 14, 
+    color: "white", 
+    marginTop: 5 
+  },
+
+  
+
+headerContent: {
+  padding: 15
+},
+
+titleContainer: {
+  flexDirection: "row",
+  justifyContent: "space-between",
+  alignItems: "center",
+},
 });
+
