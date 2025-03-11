@@ -12,7 +12,6 @@ export default function Onboarding( {mainHeader, subHeader}: Props ){
     const backButton = () => {
         router.back();
     }
-
     return(
         <View style={ styles.headerContainer }>
             <SafeAreaView style={ styles.backButton }>

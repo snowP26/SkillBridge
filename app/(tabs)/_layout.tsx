@@ -1,5 +1,6 @@
 import { Tabs } from "expo-router";
 import { House } from "lucide-react-native";
+import '../globals.css';
 
 export default function TabsLayout() {
     return (
