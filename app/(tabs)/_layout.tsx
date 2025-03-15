@@ -20,19 +20,6 @@ export default function TabsLayout() {
 
                 }}
             />
-
-            {/* 
-                Category 2 tabs. screen is temporary and is used only for navigation to check 
-                the screen created.
-            */}
-
-            <Tabs.Screen
-                name="category2"
-                options={{
-                    tabBarLabel: "cat2",
-                    tabBarIcon: ( {color} ) => <House color={ color }/>
-                }}
-                />
         </Tabs>
     )
 } 

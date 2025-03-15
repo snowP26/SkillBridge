@@ -13,25 +13,25 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/sbLogo.png",
+        "backgroundColor": "#00072D"
       },
       "package": "com.anonymous.SkillBridge"
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/sbLogo.png"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
-        {
-          "image": "./assets/images/splash-icon.png",
+        { 
+          "image": "./assets/images/sbLogo.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#00072D"
         }
       ]
     ],
