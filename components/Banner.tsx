@@ -4,8 +4,7 @@ import { ArrowLeft } from 'lucide-react-native';
 import { useNavigation } from "@react-navigation/native";
 
 type Props = {
-    link: any;
-    
+    link: any;   
 }
 
 
@@ -35,7 +34,7 @@ const styles = StyleSheet.create({
     
     backButton: {
         position: "absolute",
-        top: 15,
+        top: 45,
         left: 15,
         padding: 5,
     },

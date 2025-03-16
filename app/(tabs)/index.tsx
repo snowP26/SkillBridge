@@ -7,7 +7,7 @@ Description: A screen where the user can view all the categories of help we want
  */
 
 import { View, Text, ScrollView, TextInput, StyleSheet, Dimensions, SafeAreaView } from "react-native";
-import { useRouter, Link } from "expo-router";
+import { useRouter } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import ImageViewer from "@/components/ImageViewer";
 
@@ -43,7 +43,7 @@ export default function Categories() {
                 </View>
 
                 {/* Search bar */}
-                <View className="mt-[46px] mb-[26px]">
+                <View className="mt-[35px] mb-[26px]">
                     <TextInput 
                         placeholder="Search for services, skills, or freelancers..."
                         placeholderTextColor={"#D4D4D4"}
@@ -57,7 +57,7 @@ export default function Categories() {
                     <View>
                         {/* Recommended For You */}
                         <Text className="text-[#A6E1FA] font-extrabold text-[25px]">Recommended For You</Text>
-                        <View className="flex-row mb-16">
+                        <View className="flex-row mb-16" >
                             <View className="flex-col items-center">
                                 <ImageViewer imgSource={require("../../assets/images/categories/keyboard.png")} type="category" onPress={kbRoute}/>
                                 <Text className="text-white mt-1">Keyboards</Text>
@@ -99,56 +99,56 @@ export default function Categories() {
 
                         {/* All Categories */}
                         <Text className="text-[#A6E1FA] font-extrabold text-[25px]">All Categories</Text>
-                        <View className="flex-row ">
+                        <View className="flex-row" style={styles.spacing}>
                             <View className="flex-col items-center">
-                                <ImageViewer imgSource={require("../../assets/images/categories/keyboard.png")} type="category" onPress={kbRoute}/>
-                                <Text className="text-white mt-1">Keyboards</Text>
+                                <ImageViewer imgSource={require("../../assets/images/categories/audiophilia.png")} type="category"/>
+                                <Text className="text-white mt-1">Audiophilia</Text>
                             </View>
                             <View className="flex-col items-center ml-5">
-                                <ImageViewer imgSource={require("../../assets/images/categories/gaming.png")} type="category"/>
-                                <Text className="text-white mt-1">Gaming</Text>
-                            </View>
-                            <View className="flex-col items-center ml-5">
-                                <ImageViewer imgSource={require("../../assets/images/categories/technology.png")} type="category"/>
-                                <Text className="text-white mt-1">Technology</Text>
-                            </View><View className="flex-col items-center ml-5">
                                 <ImageViewer imgSource={require("../../assets/images/categories/Automobile.png")} type="category"/>
-                                <Text className="text-white mt-1">Automobile</Text>
+                                <Text className="text-white mt-1">Automobiles</Text>
+                            </View>
+                            <View className="flex-col items-center ml-5">
+                                <ImageViewer imgSource={require("../../assets/images/categories/boardgame.png")} type="category"/>
+                                <Text className="text-white mt-1">Board Games</Text>
+                            </View><View className="flex-col items-center ml-5">
+                                <ImageViewer imgSource={require("../../assets/images/categories/brewing.png")} type="category"/>
+                                <Text className="text-white mt-1">Brewing</Text>
                             </View>
                         </View>
 
-                        <View className="flex-row">
+                        <View className="flex-row" style={styles.spacing}>
                             <View className="flex-col items-center">
-                                <ImageViewer imgSource={require("../../assets/images/categories/keyboard.png")} type="category"/>
-                                <Text className="text-white mt-1">Keyboards</Text>
+                                <ImageViewer imgSource={require("../../assets/images/categories/cooking.png")} type="category"/>
+                                <Text className="text-white mt-1">Cooking</Text>
                             </View>
                             <View className="flex-col items-center ml-5">
+                                <ImageViewer imgSource={require("../../assets/images/categories/fashion.png")} type="category"/>
+                                <Text className="text-white mt-1">Fashion</Text>
+                            </View>
+                            <View className="flex-col items-center ml-5">
+                                <ImageViewer imgSource={require("../../assets/images/categories/fitness.png")} type="category"/>
+                                <Text className="text-white mt-1">Fitness</Text>
+                            </View><View className="flex-col items-center ml-5">
                                 <ImageViewer imgSource={require("../../assets/images/categories/gaming.png")} type="category"/>
                                 <Text className="text-white mt-1">Gaming</Text>
-                            </View>
-                            <View className="flex-col items-center ml-5">
-                                <ImageViewer imgSource={require("../../assets/images/categories/technology.png")} type="category"/>
-                                <Text className="text-white mt-1">Technology</Text>
-                            </View><View className="flex-col items-center ml-5">
-                                <ImageViewer imgSource={require("../../assets/images/categories/Automobile.png")} type="category"/>
-                                <Text className="text-white mt-1">Automobile</Text>
                             </View>
                         </View>
                         <View className="flex-row mb-16">
                             <View className="flex-col items-center">
-                                <ImageViewer imgSource={require("../../assets/images/categories/keyboard.png")} type="category"/>
+                                <ImageViewer imgSource={require("../../assets/images/categories/keyboard.png")} type="category"  onPress={kbRoute}/>
                                 <Text className="text-white mt-1">Keyboards</Text>
                             </View>
                             <View className="flex-col items-center ml-5">
-                                <ImageViewer imgSource={require("../../assets/images/categories/gaming.png")} type="category"/>
-                                <Text className="text-white mt-1">Gaming</Text>
+                                <ImageViewer imgSource={require("../../assets/images/categories/photography.png")} type="category"/>
+                                <Text className="text-white mt-1">Photography</Text>
                             </View>
                             <View className="flex-col items-center ml-5">
                                 <ImageViewer imgSource={require("../../assets/images/categories/technology.png")} type="category"/>
                                 <Text className="text-white mt-1">Technology</Text>
                             </View><View className="flex-col items-center ml-5">
-                                <ImageViewer imgSource={require("../../assets/images/categories/Automobile.png")} type="category"/>
-                                <Text className="text-white mt-1">Automobile</Text>
+                                <ImageViewer imgSource={require("../../assets/images/categories/other.png")} type="category"/>
+                                <Text className="text-white mt-1">Other</Text>
                             </View>
                         </View>
                         
@@ -167,4 +167,9 @@ const styles = StyleSheet.create({
         height: Dimensions.get("window").height,
         paddingBottom: 200,
     },
+
+    spacing: {
+        borderBottomWidth: 25,
+        borderBottomColor: "transparent",
+    }
 })

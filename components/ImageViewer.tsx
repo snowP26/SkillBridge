@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     icon: {
         width: 71,
         height: 71,
-        borderRadius: "100%",
+        borderRadius: 100,
     },
     categories: {
         width: 75,
