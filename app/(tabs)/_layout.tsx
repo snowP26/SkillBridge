@@ -14,12 +14,15 @@ export default function TabsLayout() {
             } 
         }}>
             <Tabs.Screen
-                name="index"
+                name="home"
                 options={{
                     tabBarLabel: "Home",
                     tabBarIcon: ( {color} ) => <House color={ color }/>,
                 }}
             />
+
+            <Tabs.Screen name="homeChildren" options={{ href: null }} />
+            
 
             <Tabs.Screen
                 name="inbox"

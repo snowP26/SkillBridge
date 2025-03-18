@@ -24,7 +24,7 @@ const jobData = {
     mods: ["Polyfill mod", "Painter’s tape mod", "Switch lubing", "Stab replacement"],
 };
 
-const banner = require("../../assets/images/categories/keyboard.png");
+const banner = require("../../../assets/images/categories/keyboard.png");
 
 export default function Category2() {
 

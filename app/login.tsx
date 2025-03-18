@@ -22,7 +22,7 @@ export default function Login() {
     }
 
     const loginButton = () => {
-        router.push("/(tabs)");
+        router.push("/(tabs)/home");
     }
 
     return (

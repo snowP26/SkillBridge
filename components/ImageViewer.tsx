@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
         width: 71,
         height: 71,
         borderRadius: 100,
+        marginLeft: 4,
     },
     categories: {
         width: 75,
