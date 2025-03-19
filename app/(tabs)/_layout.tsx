@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import { Tabs } from "expo-router";
-import { House, MessagesSquare, BadgePlus, Heart, CircleUserRound} from "lucide-react-native";
+import { House, MessagesSquare, Plus, Heart, CircleUserRound} from "lucide-react-native";
 import '../globals.css';
 
 export default function TabsLayout() {
@@ -11,10 +11,14 @@ export default function TabsLayout() {
             headerShown: false, 
             tabBarStyle:{
                 backgroundColor: "#0E6BA8",
+                borderTopWidth: 0,
+                elevation: 0,  
+                shadowOpacity: 0,
+                paddingTop: 5,
             } 
         }}>
             <Tabs.Screen
-                name="home"
+                name="index"
                 options={{
                     tabBarLabel: "Home",
                     tabBarIcon: ( {color} ) => <House color={ color }/>,
@@ -37,29 +41,29 @@ export default function TabsLayout() {
                 options={{
                     tabBarLabel: "",
                     tabBarIcon: ( {focused} ) => (
-                        <View style={{
-                            borderBottomWidth: 10,
-                            borderBottomColor: "transparent",
-                        }}>
+                        <View  >
                             <View
                                 style={{
-                                    width: 91,
-                                    height: 91,
+                                    width: 80,
+                                    height: 45,
                                     justifyContent: "center",
                                     alignItems: "center",
                                     backgroundColor: "#A6E1FA",
-                                    borderRadius: "100%",
+                                    borderRadius: 100,
+                                    marginTop: 10,
+                                    overflow: "hidden",
+                                    
                                 }}
                             >
-                                <BadgePlus color={ focused ? "white" : "#0E6BA8" } size={66}/>
+                                <Plus color={ focused ? "white" : "#0E6BA8" } size={30}/>
                                 <Text
                                     style={{
-                                        fontSize: 12,
+                                        fontSize: 8,
                                         color: focused ? "white" : "#0E6BA8",
-                                        fontWeight: "bold",
-                                        
+                                        fontWeight: "300",
+                                        paddingBottom: 3,
                                     }}
-                                >Create</Text>
+                                >Post</Text>
                             </View>
                     </View>
                     ),

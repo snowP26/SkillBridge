@@ -7,7 +7,7 @@ Description: A screen where the user can view all the categories of help we want
  */
 
 import { View, Text, ScrollView, TextInput, StyleSheet, Dimensions, SafeAreaView, TouchableOpacity } from "react-native";
-import { useRouter } from "expo-router";
+import { useRouter, Link } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import { Bell } from "lucide-react-native";
 
@@ -30,7 +30,7 @@ export default function Categories() {
 
     return(
         <LinearGradient 
-            colors={["#00072D", "#0A2472", "#0A2472", "#0A2472"]}
+            colors={["#00072D", "#0A2472", "#0A2472"]}
             style={ styles.background }
         >
             {/* Safe Area View for iOS */}
@@ -51,17 +51,17 @@ export default function Categories() {
                 <View className="mt-[35px] mb-[26px]">
                     <TextInput 
                         placeholder="Search for services, skills, or freelancers..."
-                        placeholderTextColor={"#D4D4D4"}
+                        placeholderTextColor={"rgba(0, 0, 0, 0.5)"}
                         underlineColorAndroid={"transparent"}
                         className="border-1 border-white bg-white p-5  h-[47px] rounded-[10px]"
                     />
                 </View>
 
                 {/* Main Content */}
-                <ScrollView className="flex-col">
+                <ScrollView className="flex-col" showsVerticalScrollIndicator={false}>
                     <View>
                         {/* Recommended For You */}
-                        <Text className="text-[#A6E1FA] font-extrabold text-[25px]">Recommended</Text>
+                        <Text className="text-[#A6E1FA] font-extrabold text-[25px] mb-3">Recommended</Text>
                         <View className="flex-row mb-6" >
                             <DisplayCategories  title="keyboard" onPress={ kbRoute }/>
                             <DisplayCategories  title="boardgame"/>
@@ -81,7 +81,7 @@ export default function Categories() {
                         
 
                         {/* All Categories */}
-                        <Text className="text-[#A6E1FA] font-extrabold text-[25px]">All Categories</Text>
+                        <Text className="text-[#A6E1FA] font-extrabold text-[25px] mb-3">All Categories</Text>
                         <View className="flex-row" style={styles.spacing}>
                             <DisplayCategories  title="audiophilia"/>
                             <DisplayCategories  title="automobile"/>
@@ -101,7 +101,7 @@ export default function Categories() {
                             <DisplayCategories  title="technology"/>
                             <DisplayCategories  title="other"/>
                         </View>
-                        
+                        <Link href={"../categories/meow"}>Try</Link>
                     </View>
                 </ScrollView>
             </SafeAreaView>

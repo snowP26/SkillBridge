@@ -1,11 +1,11 @@
-import { View, Text } from 'react-native'
+import { View, Text, SafeAreaView } from 'react-native'
 import React from 'react'
 
 const inbox = () => {
   return (
-    <View>
+    <SafeAreaView>
       <Text>inbox</Text>
-    </View>
+    </SafeAreaView>
   )
 }
 

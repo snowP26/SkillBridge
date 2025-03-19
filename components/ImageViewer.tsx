@@ -27,14 +27,14 @@ export default function ImageViewer({ imgSource, type, onPress }: Props) {
 
 const styles = StyleSheet.create({
     icon: {
-        width: 71,
-        height: 71,
+        width: 65,
+        height: 65,
         borderRadius: 100,
         marginLeft: 4,
     },
     categories: {
-        width: 75,
-        height: 120,
+        width: 85,
+        height: 100,
         borderRadius: 15,
     },
 })

@@ -11,6 +11,12 @@
     "ios": {
       "supportsTablet": true
     },
+    "splash": {
+      "image": "./assets/images/sbBridge.png",
+          "imageWidth": "100%",
+          "resizeMode": "contain",
+          "backgroundColor": "#00072D"
+    },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/sbLogo.png",
@@ -28,7 +34,7 @@
       [
         "expo-splash-screen",
         { 
-          "image": "./assets/images/sbLogo.png",
+          "image": "./assets/images/sbBridge.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#00072D"

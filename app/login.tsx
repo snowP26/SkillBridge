@@ -22,9 +22,8 @@ export default function Login() {
     }
 
     const loginButton = () => {
-        router.push("/(tabs)/home");
+        router.push("/(tabs)")
     }
-
     return (
         <LinearGradient
             colors={ ["#00072D", "#0A2472", "#0A2472", "#0A2472"] } 

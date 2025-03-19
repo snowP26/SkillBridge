@@ -1,3 +1,4 @@
+import { images } from "@/constants/images/images";
 import ImageViewer from "./ImageViewer";
 import { View, StyleSheet, Text } from "react-native";
 
@@ -9,51 +10,51 @@ type Props = {
 const categories = [
     {
         title: "Audiophilia",
-        image: require("../assets/images/categories/audiophilia.png")
+        image: images.audiophilia,
     },
     {
         title: "Automobiles",
-        image: require("../assets/images/categories/Automobile.png")
+        image: images.automobile
     },
     {
         title: "Board Games",
-        image: require("../assets/images/categories/boardgame.png")
+        image: images.boardgame
     },
     {
         title: "Brewing",
-        image: require("../assets/images/categories/brewing.png")
+        image: images.brewing
     },
     {
         title: "Cooking",
-        image: require("../assets/images/categories/cooking.png")
+        image: images.cooking
     },
     {
         title: "Fashion",
-        image: require("../assets/images/categories/fashion.png")
+        image: images.fashion
     },
     {
         title: "Fitness",
-        image: require("../assets/images/categories/fitness.png")
+        image: images.fitness
     },
     {
         title: "Gaming",
-        image: require("../assets/images/categories/gaming.png")
+        image: images.gaming
     },
     {
         title: "Keyboard",
-        image: require("../assets/images/categories/keyboard.png")
+        image: images.keyboard
     },
     {
         title: "Other",
-        image: require("../assets/images/categories/other.png")
+        image: images.other
     },
     {
         title: "Photography",
-        image: require("../assets/images/categories/photography.png")
+        image: images.photography
     },
     {
         title: "Technology",
-        image: require("../assets/images/categories/technology.png")
+        image: images.technology
     },
 ]
 
@@ -168,5 +169,6 @@ const styles = StyleSheet.create({
     text: {
         color: "white",
         marginTop: 4,
+        fontSize: 10,
     }
 })
