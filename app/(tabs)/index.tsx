@@ -62,7 +62,7 @@ export default function Categories() {
                     <View>
                         {/* Recommended For You */}
                         <Text className="text-[#A6E1FA] font-extrabold text-[25px] mb-3">Recommended</Text>
-                        <View className="flex-row mb-6" >
+                        <View className="flex-row mb-8" >
                             <DisplayCategories  title="keyboard" onPress={ kbRoute }/>
                             <DisplayCategories  title="boardgame"/>
                             <DisplayCategories  title="photography"/>
@@ -72,7 +72,7 @@ export default function Categories() {
 
                         {/* Trending */}
                         <Text className="text-[#A6E1FA] font-extrabold text-[25px] mb-3">Trending</Text>
-                        <View className="flex-row mb-6">
+                        <View className="flex-row mb-8">
                             <DisplayCategories  title="gaming"/>
                             <DisplayCategories  title="brewing"/>
                             <DisplayCategories  title="keyboard" onPress={ kbRoute }/>
@@ -101,7 +101,6 @@ export default function Categories() {
                             <DisplayCategories  title="technology"/>
                             <DisplayCategories  title="other"/>
                         </View>
-                        <Link href={"../categories/meow"}>Try</Link>
                     </View>
                 </ScrollView>
             </SafeAreaView>

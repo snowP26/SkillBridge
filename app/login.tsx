@@ -8,22 +8,35 @@ Description: A screen where the user can Log In into their account
 import { Text, View, StyleSheet, Dimensions, Alert, SafeAreaView, TextInput } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter, Link } from "expo-router";
-import { EyeClosed, MapPin } from "lucide-react-native";
+import { auth } from "../FirebaseConfig";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import Onboarding from "@/components/Onboarding";
 import Button from "@/components/Buttons";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
+import { useState } from "react";
 
 
 export default function Login() {
-
     const router = useRouter();
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const signIn = async() => {
+        try {
+            const user = await signInWithEmailAndPassword(auth, email, password)
+            if(user) router.replace("/(tabs)")
+        } catch (error: any) {
+            console.log(error)
+            alert("Sign In failed: " + error.message)
+        }
+    }
+
+    
     const backButton = () => {
         router.back();
     }
 
-    const loginButton = () => {
-        router.push("/(tabs)")
-    }
     return (
         <LinearGradient
             colors={ ["#00072D", "#0A2472", "#0A2472", "#0A2472"] } 
@@ -35,10 +48,12 @@ export default function Login() {
                 <SafeAreaView>
                     <TextInput
                         style={ styles.input }
-                        placeholder="Email or Username"
+                        placeholder="Email"
+                        value={email}
                         placeholderTextColor={"#D4D4D4"}
                         underlineColorAndroid={"transparent"}
                         keyboardType="email-address"
+                        onChangeText={setEmail}
                     />
                 </SafeAreaView>
                 <SafeAreaView>
@@ -48,6 +63,8 @@ export default function Login() {
                         placeholderTextColor={"#D4D4D4"}
                         underlineColorAndroid={"transparent"}
                         secureTextEntry={true}
+                        value={password}
+                        onChangeText={setPassword}
                     />
                     
                 </SafeAreaView>
@@ -63,13 +80,15 @@ export default function Login() {
                     
                 />
                 <Text style={ styles.cbText }>Remember Me</Text>
+                <Link style={ styles.cbText2 } href="/register" >Create an Account</Link>
             </SafeAreaView>
             
             <SafeAreaView style={ styles.button }>
-                <Button onPress={loginButton} label="Log In"/>
+                <Button onPress={signIn} label="Log In"/>
             </SafeAreaView>
             <SafeAreaView style={styles.fpContainer}>
                 <Link href="/forgotpassword" style={styles.fPassword}>Forgot Password?</Link>
+                
             </SafeAreaView>
             
             
@@ -109,19 +128,25 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginLeft: 25,
         flexDirection: "row",
-
     },
     cbText: {
         color: "white",
         fontSize: 14,
         marginLeft: 5,
+        flex: 1,
     },
-    
+    cbText2: {
+        color: "white",
+        fontSize: 14,
+        marginRight: 25,
+    },
+
     fpContainer: {
-        flexDirection: "row-reverse"
+        flexDirection: "row"
     },
     fPassword: {
         color: "white",
-        marginRight: 25,
+        marginLeft: 25,
+        marginTop: 10,
     },
 });
