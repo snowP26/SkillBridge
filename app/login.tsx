@@ -5,7 +5,7 @@ Project: SkillBridge
 Feature: [SB-003] Log In Screen
 Description: A screen where the user can Log In into their account
  */
-import { Text, View, StyleSheet, Dimensions, Alert, SafeAreaView, TextInput } from "react-native";
+import { Text, View, StyleSheet, Dimensions, SafeAreaView, TextInput } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter, Link } from "expo-router";
 import { auth } from "../FirebaseConfig";
@@ -19,6 +19,10 @@ import { useState } from "react";
 export default function Login() {
     const router = useRouter();
 
+    const regRoute = () => {
+        router.replace("/register");
+    }
+    
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -69,7 +73,7 @@ export default function Login() {
                     
                 </SafeAreaView>
             </View>
-            <SafeAreaView style={ styles.checkbox }>
+            <SafeAreaView style={ styles.checkbox } className="mb-6">
                 <BouncyCheckbox 
                     size={15}
                     onPress={(isChecked: boolean) => {}} 
@@ -80,20 +84,22 @@ export default function Login() {
                     
                 />
                 <Text style={ styles.cbText }>Remember Me</Text>
-                <Link style={ styles.cbText2 } href="/register" >Create an Account</Link>
+                <Link style={ styles.cbText2 } href="/register">Forgot Password?</Link>
             </SafeAreaView>
             
             <SafeAreaView style={ styles.button }>
                 <Button onPress={signIn} label="Log In"/>
             </SafeAreaView>
-            <SafeAreaView style={styles.fpContainer}>
-                <Link href="/forgotpassword" style={styles.fPassword}>Forgot Password?</Link>
-                
+            <SafeAreaView className="content-center items-center">
+                <SafeAreaView className="flex-row items-center w-[90%] content-center my-[10px]">
+                    <View className="flex-1 h-[1px] bg-white mx-[10px]" />
+                        <Text className="text-white font-bold">OR</Text>
+                    <View className="flex-1 h-[1px] bg-white mx-[10px]" />
+                </SafeAreaView>
             </SafeAreaView>
-            
-            
-            
-
+            <SafeAreaView style={ styles.button }>
+                <Button onPress={ regRoute } label="Register" theme="secondary"/>
+            </SafeAreaView>
         </LinearGradient>
     );
 }
@@ -107,8 +113,7 @@ const styles = StyleSheet.create({
     button: {
         alignItems: "center",
         alignContent: "center",
-        borderTopWidth: 20,
-        borderTopColor: "transparent",
+
     },
     header: {
         fontWeight: "bold",
@@ -123,6 +128,9 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         color: "#D4D4D4",
         paddingTop: 40,
+        paddingLeft: 12.5,
+        fontSize: 14, 
+        marginBottom: 5,
     },
     checkbox: {
         marginTop: 10,
@@ -139,14 +147,5 @@ const styles = StyleSheet.create({
         color: "white",
         fontSize: 14,
         marginRight: 25,
-    },
-
-    fpContainer: {
-        flexDirection: "row"
-    },
-    fPassword: {
-        color: "white",
-        marginLeft: 25,
-        marginTop: 10,
     },
 });

@@ -34,9 +34,9 @@ const bridgeLogo = require("../assets/images/sbBridgeW.png");
     <LinearGradient
       colors={ ["#00072D", "#0A2472", "#0A2472", "#0A2472"] }
       style={{ height: screenHeight }} 
-      className="flex-1 w-full"
+      className="flex-1 w-full "
     >
-      <Text className="text-7xl text-white mt-[56px] ml-[18px] font-extrabold">SkillBridge</Text>
+      <Text className="text-7xl text-white mt-[56px] ml-[18px] font-extrabold pt-8">SkillBridge</Text>
 
       <View className="content-center items-center mb-[-90px]">
         <Image source={ bridgeLogo } style={ styles.image }/>

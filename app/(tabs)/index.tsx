@@ -23,7 +23,7 @@ export default function Categories() {
     const router = useRouter();
 
     const kbRoute = () => {
-        router.push("/homeChildren/keybCat");
+        router.push("/homeChildren/categoryListings");
     }
 
 

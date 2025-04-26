@@ -6,9 +6,6 @@ import { useNavigation } from "@react-navigation/native";
 type Props = {
     link: any;   
 }
-
-
-
 export default function Banner( { link }: Props ) {
 
     const navigation = useNavigation();
@@ -25,7 +22,6 @@ export default function Banner( { link }: Props ) {
         </View>
     )
 }
-
 const styles = StyleSheet.create({
     
     bannerContainer : {
