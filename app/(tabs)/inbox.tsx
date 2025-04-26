@@ -1,7 +1,7 @@
-import { View, Text, SafeAreaView, StyleSheet, Dimensions } from 'react-native'
+import { SafeAreaView, StyleSheet, Dimensions } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import React from 'react'
-import { Move, MoveLeft } from "lucide-react-native";
+import TabsBanner from '@/components/TabsBanner'
 
 const inbox = () => {
   return (
@@ -9,10 +9,9 @@ const inbox = () => {
       colors={["#00072D", "#0A2472", "#0A2472"]}
       style={ styles.background } 
     >
-      <SafeAreaView className="ml-10">
-        <MoveLeft color={"white"} />
-        <Text className="flex color-white">test</Text>
-      </SafeAreaView>
+      <SafeAreaView className='flex-1 px-[15px] py-[20px]'>
+        <TabsBanner header="Inbox" />
+      </SafeAreaView>  
     </LinearGradient>
     
   )

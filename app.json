@@ -13,9 +13,9 @@
     },
     "splash": {
       "image": "./assets/images/sbBridge.png",
-          "imageWidth": "100%",
-          "resizeMode": "contain",
-          "backgroundColor": "#00072D"
+      "imageWidth": "100%",
+      "resizeMode": "contain",
+      "backgroundColor": "#00072D"
     },
     "android": {
       "adaptiveIcon": {
@@ -33,13 +33,14 @@
       "expo-router",
       [
         "expo-splash-screen",
-        { 
+        {
           "image": "./assets/images/sbBridge.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#00072D"
         }
-      ]
+      ],
+      "expo-secure-store"
     ],
     "experiments": {
       "typedRoutes": true
