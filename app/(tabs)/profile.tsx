@@ -1,7 +1,7 @@
 import { View, Text, SafeAreaView } from 'react-native'
 import React from 'react'
 
-const profile = () => {
+const Profile = () => {
   return (
     <SafeAreaView>
       <Text>profile</Text>
@@ -9,4 +9,4 @@ const profile = () => {
   )
 }
 
-export default profile
+export default Profile

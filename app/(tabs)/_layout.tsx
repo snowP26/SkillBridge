@@ -1,7 +1,6 @@
 import { View, Text } from "react-native";
 import { Tabs } from "expo-router";
 import { House, MessagesSquare, Plus, Heart, CircleUserRound} from "lucide-react-native";
-import '../globals.css';
 
 export default function TabsLayout() {
     return (
@@ -34,6 +33,7 @@ export default function TabsLayout() {
                     tabBarLabel: "Inbox",
                     tabBarIcon: ( {color} ) => <MessagesSquare color={ color }/>,
                 }}
+                
             />
             
             <Tabs.Screen
@@ -63,7 +63,7 @@ export default function TabsLayout() {
                                         fontWeight: "300",
                                         paddingBottom: 3,
                                     }}
-                                >Post</Text>
+                                >Create</Text>
                             </View>
                     </View>
                     ),

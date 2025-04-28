@@ -9,20 +9,31 @@ type Props = {
 };
 
 export default function ImageViewer({ imgSource, type, onPress }: Props) {
-    if(type == "category"){
-        return(
-            <TouchableOpacity onPress={onPress}>
-                <Image source={imgSource} style={styles.categories}/>
-            </TouchableOpacity>
-        );
-    }
 
-    if(type == "icon"){
-        return (
-            <Image source={imgSource} style={ styles.icon }
-        />);
-    }
-    
+    switch (type) {
+        case "category":
+            return(
+                <TouchableOpacity onPress={onPress}>
+                    <Image source={imgSource} style={styles.categories}/>
+                </TouchableOpacity>
+            );
+            break;
+
+        case "icon":
+            return (
+                <Image source={imgSource} style={ styles.icon }/>
+            );
+            break;
+
+        case "chatIcon":
+            return(
+                <Image source={imgSource} style={ styles.chat } />
+            );
+            break;
+
+        default:
+            break;
+    } 
 }
 
 const styles = StyleSheet.create({
@@ -37,4 +48,9 @@ const styles = StyleSheet.create({
         height: 100,
         borderRadius: 15,
     },
+    chat: {
+        width: 50,
+        height: 50,
+        borderRadius: 100,
+    }
 })

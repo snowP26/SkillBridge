@@ -23,7 +23,7 @@ const loginButton = () => {
 }
 
 const signUpButton = () => {
-  router.push("/register");
+  router.push("/(tabs)/inbox");
 };
 
 const screenHeight = Dimensions.get("window").height;

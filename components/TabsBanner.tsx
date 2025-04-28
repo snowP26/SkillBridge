@@ -13,10 +13,7 @@ export default function tabsBanner({ header }: Props){
         router.back();
     }
     return (
-        <View className="relative flex-row items-center justify-between px-4 mt-2 mb-8">
-      <TouchableOpacity onPress={ backButton } className="z-10">
-        <ArrowLeft color="white" />
-      </TouchableOpacity>
+    <View className="relative flex-row items-center justify-between px-4 my-10">
 
       <View className="absolute left-0 right-0 items-center">
         <Text className="text-[32px] font-black text-[#B9D7FF] text-center">{ header }</Text>
