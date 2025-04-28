@@ -8,12 +8,14 @@ Description: A screen where the user can Log In into their account
 import { Text, View, StyleSheet, Dimensions, SafeAreaView, TextInput } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter, Link } from "expo-router";
-import { auth } from "../FirebaseConfig";
-import { signInWithEmailAndPassword } from "firebase/auth";
 import Onboarding from "@/components/Onboarding";
 import Button from "@/components/Buttons";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import { useState } from "react";
+
+import { auth } from "../FirebaseConfig";
+import { signInWithEmailAndPassword } from "firebase/auth";
+
 
 
 export default function Login() {
